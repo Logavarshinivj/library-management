@@ -1,0 +1,42 @@
+.movie-poster{
+  height:640px;
+  width:100%;
+  object-fit: cover;
+}
+.App{
+  /* display:flex;
+  gap:16px;
+  flex-wrap: wrap;
+  justify-content: space-around; */
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(340px,1fr));
+  gap:16px;
+  justify-items: center;
+  /* padding:10px;
+  margin: 0px 10px 30px 20px;
+  border:20px;
+  display: grid;
+  grid-template-columns: 360px 360px 360px 360px;
+  grid-template-rows: 1fr 1fr 1fr;
+  row-gap: 10px;
+  column-gap: 10px; */
+}
+button{
+  margin-right: 10px;
+  margin-top: 10px;;
+
+}
+.movie-specs{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.movie-container{
+  width:100%+++;
+}
+.movie-name{
+  margin:0;
+}
+.movie-summary{
+  margin:0;
+}
