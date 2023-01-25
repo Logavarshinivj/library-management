@@ -3,7 +3,7 @@
   width:100%;
   object-fit: cover;
 } 
-.App{
+.movie-list{
   display:grid;
   grid-template-columns: repeat(auto-fit,minmax(340px,1fr));
   gap:16px;

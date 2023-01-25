@@ -70,9 +70,10 @@ export default function App() {
   }
 ]
   return (
-    <div className="App">
+    <div className="movie-list">
       {movies.map((mv)=>(
-        <ListOfMovies  poster={mv.poster} name={mv.name} summary={mv.summary} rating={mv.rating} />
+        // <ListOfMovies  poster={mv.poster} name={mv.name} summary={mv.summary} rating={mv.rating} />
+        <ListOfMovies movie={mv} />
 
       ))}
 
@@ -80,16 +81,17 @@ export default function App() {
   )
 }
 
-function ListOfMovies({name,poster,rating,summary}){
+// function ListOfMovies({name,poster,rating,summary}){
+  function ListOfMovies({movie}){
   return(
   <div className="movie-container">
     <div className="movie-show">
-    <img className="movie-poster" src={poster}/>
+    <img className="movie-poster" src={movie.poster}/>
     <div className="movie-specs">
-    <h2 className='movie-name'>{name}</h2>
-    <h5>⭐{rating}</h5>
+    <h2 className='movie-name'>{movie.name}</h2>
+    <h5>⭐{movie.rating}</h5>
     </div>
-    <p className="movie-summary">{summary}</p>
+    <p className="movie-summary">{movie.summary}</p>
     </div>
     <Counter/>
     
