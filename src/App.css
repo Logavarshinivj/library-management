@@ -3,9 +3,9 @@
   width:100%;
   object-fit: cover;
 } 
-.App{
+.movie-list{
   display:grid;
-  grid-template-columns: repeat(auto-fit,minmax(340px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
   gap:16px;
   justify-items: center;
   /* display:flex;
@@ -33,11 +33,20 @@ button{
   justify-content: space-between;
 }
 .movie-container{
-  width:100%+++;
+  width:100%;
 }
 .movie-name{
   margin:0;
 }
 .movie-summary{
   margin:0;
+}
+
+.add-movie-form{
+  display:flex;
+  flex-direction: column;
+  gap:5px;
+  max-width: 500px;
+  margin:10px auto;
+
 }

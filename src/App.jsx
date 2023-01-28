@@ -1,7 +1,15 @@
 import './App.css'
 import {useState} from 'react';
 export default function App() {
-  const movies=[
+  return(
+    <div className="App">
+      <MovieList />
+       {/* <Addcolor /> */}
+    </div>
+  )
+
+function MovieList(){
+  const[movies,setMovies]=useState([
   {
     "name": "Vikram",
     "poster": "https://m.media-amazon.com/images/M/MV5BMmJhYTYxMGEtNjQ5NS00MWZiLWEwN2ItYjJmMWE2YTU1YWYxXkEyXkFqcGdeQXVyMTEzNzg0Mjkx._V1_.jpg",
@@ -68,18 +76,41 @@ export default function App() {
     "summary": "When Earth becomes uninhabitable in the future, a farmer and ex-NASA\\n pilot, Joseph Cooper, is tasked to pilot a spacecraft, along with a team\\n of researchers, to find a new planet for humans.",
     "rating": 8.8
   }
-]
+])
+const [name,setName]=useState("")
+const [poster,setPoster]=useState("")
+const [rating,setRating]=useState("")
+const [summary,setSummary]=useState("")
+
+
   return (
-    <div className="App">
+    <div>
+    <div className="add-movie-form">
+      <input onChange={(event)=>setName(event.target.value)} type="text" placeholder="Name" />
+      <input onChange={(event)=>setPoster(event.target.value)} type="text" placeholder="Poster" />
+      <input onChange={(event)=>setRating(event.target.value)} type="text" placeholder="Rating" />
+      <input onChange={(event)=>setSummary(event.target.value)} type="text" placeholder="Summary" />
+      <button onClick={()=>{
+        const newMovie={
+          name:name,
+          poster:poster,
+          summary:summary,
+          rating:rating,
+        }
+        setMovies([...movies,newMovie])
+      }}>Add movie</button>
+    </div>
+
+     
+    <div className="movie-list">
       {movies.map((mv,index)=>(
         //  <ListOfMovies  poster={mv.poster} name={mv.name} summary={mv.summary} rating={mv.rating} />
         <ListOfMovies key={index}  movie={mv} />
-      
-
       ))}
-      {/* <Addcolor /> */}
 
     </div>
+    </div>
+    
   )
 }
 
@@ -163,5 +194,4 @@ function ColorBox({color}){
   )
 }
 
-
-
+}
