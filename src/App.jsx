@@ -1,4 +1,6 @@
 import './App.css'
+import Button from '@mui/material/Button';
+
 import {useState} from 'react';
 export default function App() {
   return(
@@ -90,7 +92,7 @@ const [summary,setSummary]=useState("")
       <input onChange={(event)=>setPoster(event.target.value)} type="text" placeholder="Poster" />
       <input onChange={(event)=>setRating(event.target.value)} type="text" placeholder="Rating" />
       <input onChange={(event)=>setSummary(event.target.value)} type="text" placeholder="Summary" />
-      <button onClick={()=>{
+      <Button variant="contained" onClick={()=>{
         const newMovie={
           name:name,
           poster:poster,
@@ -98,7 +100,9 @@ const [summary,setSummary]=useState("")
           rating:rating,
         }
         setMovies([...movies,newMovie])
-      }}>Add movie</button>
+      }} >Add movie</Button>
+      
+
     </div>
 
      
@@ -154,8 +158,7 @@ function Counter(){
       <button onClick={()=>SetLike(like+1)}>👍{like}</button>
       <button onClick={()=>SetDislike(dislike+1)}>👎{dislike}</button>
     </div>
-  )
-    
+  );    
 }
 
 function Addcolor(){
