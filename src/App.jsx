@@ -70,12 +70,14 @@ export default function App() {
   }
 ]
   return (
-    <div className="movie-list">
-      {movies.map((mv)=>(
-        // <ListOfMovies  poster={mv.poster} name={mv.name} summary={mv.summary} rating={mv.rating} />
-        <ListOfMovies movie={mv} />
+    <div className="App">
+      {movies.map((mv,index)=>(
+        //  <ListOfMovies  poster={mv.poster} name={mv.name} summary={mv.summary} rating={mv.rating} />
+        <ListOfMovies key={index}  movie={mv} />
+      
 
       ))}
+      {/* <Addcolor /> */}
 
     </div>
   )
@@ -83,15 +85,28 @@ export default function App() {
 
 // function ListOfMovies({name,poster,rating,summary}){
   function ListOfMovies({movie}){
+    const styles={
+      color:movie.rating>8.5?"green":"red",
+      backgroundColor:"orange",
+    };
+    const[show,setShow]=useState(false)
+    // const summaryStyles={
+    //   display:show?"block":"none",
+    // }
   return(
   <div className="movie-container">
     <div className="movie-show">
     <img className="movie-poster" src={movie.poster}/>
     <div className="movie-specs">
     <h2 className='movie-name'>{movie.name}</h2>
-    <h5>⭐{movie.rating}</h5>
+    <p style={styles} className='movie-rating'>⭐{movie.rating}</p>
     </div>
-    <p className="movie-summary">{movie.summary}</p>
+    <button onClick={() => setShow(!show)}>Toggle summary- {"" + show}</button>
+    {/* conditional styling 
+    <p style={summaryStyles}className="movie-summary">{movie.summary}</p> */}
+    
+     {/* conditional rendering */}
+    {show?<p className="movie-summary">{movie.summary}</p>:null}
     </div>
     <Counter/>
     
@@ -112,6 +127,41 @@ function Counter(){
     
 }
 
+function Addcolor(){
+  
+  const[color,setColor]=useState("orange")
+  const styles={
+    backgroundColor:color,
+  }
+  const [colorList,setColorList]=useState(["crimson","red","green"]);
+  return(
+    <div>
+      <input type="text" style={styles}  onChange={(event)=>setColor(event.target.value)} value={color}/>
+      <button onClick={()=>(setColorList([...colorList,color]))}>ADD COLOR</button>
+      {colorList.map((clr)=>(
+        <ColorBox color={clr}/>
+      ))}
+     
+    </div>
+    
+    
+  )
+}
+
+function ColorBox({color}){
+  const styles={
+    height:"25px",
+    width:"251px",
+    background:color,
+    margin:"5px 0px",
+
+  }
+  return(
+    <div style={styles}>
+
+    </div>
+  )
+}
 
 
 
