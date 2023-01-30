@@ -8,7 +8,7 @@ export function ListOfMovies({ movie }) {
     color: movie.rating > 8.5 ? "green" : "red",
     backgroundColor: "orange",
   };
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
   // const summaryStyles={
   //   display:show?"block":"none",
   // }
@@ -20,7 +20,7 @@ export function ListOfMovies({ movie }) {
           <h2 className='movie-name'>{movie.name}</h2>
           <p style={styles} className='movie-rating'>⭐{movie.rating}</p>
         </div>
-        <button onClick={() => setShow(!show)}>Toggle summary- {"" + show}</button>
+        <button onClick={() => setShow(!show)}>Toggle summary</button>
         {/* conditional styling
             <p style={summaryStyles}className="movie-summary">{movie.summary}</p> */}
 
