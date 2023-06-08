@@ -1,9 +1,9 @@
-.movie-poster{
+.book-poster{
   height:640px;
   width:100%;
-  object-fit: cover;
+  object-fit:cover;
 } 
-.movie-list{
+.book-list{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
   gap:16px;
@@ -32,10 +32,11 @@ button{
   align-items: center;
   justify-content: space-between;
 }
-.movie-container{
+.book-container{
   width:100%;
+  height:min-content;
 }
-.movie-name{
+.book-name{
   margin:0;
 }
 .movie-summary{
@@ -43,11 +44,37 @@ button{
   margin-bottom: 15px;
 }
 
-.add-movie-form{
+.add-book,.edit-book{
   display:flex;
   flex-direction: column;
   gap:5px;
   max-width: 500px;
   margin:10px auto;
 
+}
+
+.not-found{
+  width:100%;
+  object-fit:cover;
+  max-width:600px;
+}
+
+.book-container1{
+  max-width: 650px;
+}
+body{
+  margin:0;
+}
+.color{
+  margin-top: 20px;
+  margin-left: 20%;
+  min-width: 240px;
+}
+.ipage{
+  margin-left: 40px;
+
+}
+
+.book-content{
+  margin-left: 20px;
 }

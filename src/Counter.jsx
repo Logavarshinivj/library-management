@@ -15,7 +15,7 @@ export function Counter() {
       </IconButton>
      
       <IconButton onClick={() => SetDislike(dislike + 1)} color="error">
-      <Badge badgeContent={dislike}  color="error">👍
+      <Badge badgeContent={dislike}  color="error">👎
       </Badge>
       </IconButton>
     </div>
